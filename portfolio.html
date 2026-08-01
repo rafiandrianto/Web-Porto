@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Muhammad Rafi Andrianto | Portofolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="dotnav" aria-label="Section navigation">
+  <button data-target="hero" class="active" aria-label="Go to intro"><span class="label">intro</span></button>
+  <button data-target="about" aria-label="Go to about"><span class="label">about</span></button>
+  <button data-target="projects" aria-label="Go to projects"><span class="label">projects</span></button>
+  <button data-target="contact" aria-label="Go to contact"><span class="label">contact</span></button>
+</nav>
+
+<main>
+
+  <!-- ============ INTRO ============ -->
+  <section id="hero">
+    <div class="ambient" id="ambient"></div>
+    <div class="hero-grid">
+      <div>
+        <p class="eyebrow reveal-item" style="--i:0">// data analyst &amp; ml practitioner</p>
+        <h1 class="reveal-item" style="--i:1">Muhammad Rafi Andrianto</h1>
+        <p class="tagline reveal-item" style="--i:2">
+          Hi! I'm Rafi. I dive deep into Data Analytics, Data Science, and AI/Machine Learning 
+          to turn messy datasets into clear, actionable business decisions. 
+          My work spans predictive machine learning, executive analytics, and custom Python/SQL applications 
+          designed to streamline operations and protect revenue.
+        </p>
+      </div>
+      <div class="photo-wrap reveal-item" style="--i:1">
+        <div class="photo">
+          <img src="images/foto.jpeg" alt="Your Name"
+               onerror="this.style.display='none'; this.parentElement.classList.add('no-photo')">
+        </div>
+      </div>
+    </div>
+    <div class="scroll-cue">
+      <span>scroll</span>
+      <span class="arrow">↓</span>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section id="about">
+    <p class="eyebrow reveal-item" style="--i:0">// about</p>
+    <h2 class="reveal-item" style="--i:1">My Journey</h2>
+    <div class="about-grid">
+      <div class="story reveal-item" style="--i:2">
+        <p>
+          My fascination with tech started the moment I got my hands on my first personal computer. 
+          Over time, that curiosity naturally turned into a habit of diving deep into raw data, tinkering with patterns, 
+          and figuring out how things work under the hood.
+        </p>
+        <p>
+          That passion led me to pursue a degree in Information System Science and Engineering. 
+          The real turning point came during university when I built my first machine learning project.
+          Seeing how algorithms transform messy inputs into accurate forecasts instantly hooked me on 
+          the power of predictive technology.
+        </p>
+        <p>
+          Since then, I’ve focused on the intersection of Data Science, Analytics, and Machine Learning. 
+          I love solving operational puzzles whether that’s predicting revenue risks, 
+          engineering clean software solutions, or building executive dashboards. 
+          Moving forward, I’m looking to bring these data-driven solutions to high-impact teams and real-world challenges.
+        </p>
+      </div>
+      <div class="reveal-item" style="--i:3">
+        <p class="skills-label">Toolbox</p>
+        <div class="skills">
+          <span>Python</span>
+          <span>SQL</span>
+          <span>Pandas</span>
+          <span>scikit-learn</span>
+          <span>Tableau</span>
+          <span>Power BI</span>
+          <span>Looker Studio</span>
+          <span>Excel</span>
+        </div>
+
+        <p class="timeline-label">Education Timeline</p>
+        <div class="timeline">
+          <div class="entry">
+            <span class="year">2026</span>
+            <div class="role">Purwadhika Digital Technology School</div>
+            <div class="detail">Specialized in Data Analyst & Machine Learning, building end-to-end predictive models and business analytics solutions.</div>
+          </div>
+          <div class="entry">
+            <span class="year">2021 - 2025</span>
+            <div class="role">Ritsumeikan University</div>
+            <div class="detail">Focused on software engineering, database systems, and data analytics while building early machine learning projects</div>
+          </div>
+          <div class="entry">
+            <span class="year">2017 - 2020</span>
+            <div class="role">SMA Al-Izhar Pondok Labu</div>
+            <div class="detail">Built a strong foundation in advanced mathematics, physics, and introductory computer science concepts.</div>
+          </div>
+        </div>
+    </div>
+  </section>
+
+  <!-- ============ PROJECTS ============ -->
+  <section id="projects">
+    <p class="eyebrow reveal-item" style="--i:0">// projects</p>
+    <h2 class="reveal-item" style="--i:1">Selected work</h2>
+    <div class="project-grid">
+
+      <!-- Project 1: Telkomsel Forensics -->
+      <div class="card reveal-item" style="--i:2">
+        <span class="tag">data forensics &amp; analytics</span>
+        <h3>Telkomsel Revenue Leakage &amp; Data Audit</h3>
+        <p>Audited 300,000 internet transaction logs to identify systemic bugs, IMEI mismatches in premium bundling programs, and mitigate compliance risks across business units.</p>
+        <div class="pills"><span>Python</span><span>Pandas</span><span>SciPy</span><span>Seaborn</span></div>
+        <a class="link" href="https://public.tableau.com/app/profile/rafi.andrianto/viz/TelkomselDashboard/Tab1DataQuality?publish=yes" target="_blank" rel="noopener">
+          View project <span class="arrow">→</span>
+        </a>
+      </div>
+
+      <!-- Project 2: Microplastics -->
+      <div class="card reveal-item" style="--i:3">
+        <span class="tag">time-series &amp; predictive modeling</span>
+        <h3>Microplastic Accumulation Prediction</h3>
+        <p>Built predictive deep learning models (LSTM &amp; Random Forest) to model microplastic concentration trends over time based on environmental variables.</p>
+        <div class="pills"><span>Python</span><span>TensorFlow</span><span>Keras</span><span>Scikit-learn</span></div>
+        <a class="link" href="https://github.com/rafiandrianto/microplastic-accumulation-prediction" target="_blank" rel="noopener">
+          View project <span class="arrow">→</span>
+        </a>
+      </div>
+
+      <!-- Project 3: Skateboarder Computer Vision -->
+      <div class="card reveal-item" style="--i:4">
+        <span class="tag">computer vision &amp; pose estimation</span>
+        <h3>Skateboarder Performance Analysis System</h3>
+        <p>Engineered a motion analysis tool comparing user trick videos against ideal technique to extract body keypoints and suggest biomechanical joint corrections.</p>
+        <div class="pills"><span>Python</span><span>TensorFlow</span><span>MediaPipe</span></div>
+        <a class="link" href="https://github.com/rafiandrianto/Skateboard3DConvolution" target="_blank" rel="noopener">
+          View project <span class="arrow">→</span>
+        </a>
+      </div>
+
+      <!-- Project 4: Sentiment Analysis -->
+      <div class="card reveal-item" style="--i:5">
+        <span class="tag">nlp &amp; classification</span>
+        <h3>Product Review Sentiment Analysis</h3>
+        <p>Trained Logistic Regression and Deep Neural Networks on a dataset of 4,000 product reviews to automatically classify customer feedback and sentiment trends.</p>
+        <div class="pills"><span>Python</span><span>TensorFlow</span><span>Scikit-learn</span></div>
+        <a class="link" href="https://github.com/rafiandrianto/sentiment-analysis" target="_blank" rel="noopener">
+          View project <span class="arrow">→</span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section id="contact">
+    <p class="eyebrow reveal-item" style="--i:0">// get in touch</p>
+    <h2 class="reveal-item" style="--i:1">Let's talk data.</h2>
+    <div class="contact-list reveal-item" style="--i:2">
+      <a href="mailto:rafiandr97@gmail.com">
+        <span class="k">email</span><span class="v">rafiandr97@gmail.com</span>
+      </a>
+      <a href="https://id.linkedin.com/in/m-rafi-andrianto-450387158" target="_blank" rel="noopener">
+        <span class="k">linkedin</span><span class="v">/in/m-rafi-andrianto-450387158</span>
+      </a>
+      <a href="https://github.com/rafiandrianto" target="_blank" rel="noopener">
+        <span class="k">github</span><span class="v">/rafiandrianto</span>
+      </a>
+      <a href="resume/ResumeRafiAndrianto.pdf" target="_blank" rel="noopener">
+        <span class="k">resume</span><span class="v">download →</span>
+      </a>
+    </div>
+    <p class="credit reveal-item" style="--i:3">Designed &amp; built by Muhammad Rafi Andrianto · 2026</p>
+  </section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
