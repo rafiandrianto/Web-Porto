@@ -1,3 +1,5 @@
+
+
 :root {
   --bg: #fbfaf7;
   --ink: #14171c;
@@ -28,11 +30,6 @@ a { color: inherit; text-decoration: none; }
   outline: 2px solid var(--signal);
   outline-offset: 3px;
 }
-
-/* ---------- scroll shell ----------
-   Scrolling between sections is driven by script.js (a custom-eased
-   animation) rather than native CSS scroll-snap, so it can be tuned
-   to feel slower / heavier than an instant native snap. */
 
 main {
   height: 100vh;
@@ -402,16 +399,112 @@ section.in-view .reveal-item {
   width: 100%;
 }
 
-#projects h2 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); margin-bottom: 2.2rem; }
+#projects h2 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); }
 
-.project-grid {
+.projects-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 1rem;
+  margin-bottom: 1.4rem;
+}
+
+.arrows { display: flex; gap: 0.5rem; }
+
+.arrows button {
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--ink);
+  font-family: var(--mono);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s, transform 0.2s, opacity 0.2s;
+}
+
+.arrows button:hover:not(:disabled) {
+  border-color: var(--signal);
+  color: var(--signal);
+  transform: translateY(-2px);
+}
+
+.arrows button:disabled { opacity: 0.35; cursor: default; }
+
+/* horizontal project pages (each page is a 2x2 grid) */
+
+.pager {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.count {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.scroller {
+  display: flex;
+  gap: 2rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding-left: 4px;
+  /* padding leaves room for the hover lift + offset shadow so they aren't clipped */
+  padding: 10px 16px 18px 4px;
+  scrollbar-width: none;
+  cursor: grab;
+}
+
+.scroller::-webkit-scrollbar { display: none; }
+
+.scroller.dragging {
+  scroll-snap-type: none;
+  cursor: grabbing;
+  user-select: none;
+}
+
+.scroller a { -webkit-user-drag: none; }
+
+.page {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-auto-rows: 1fr;
   gap: 1.4rem;
 }
 
 @media (max-width: 900px) {
-  .project-grid { grid-template-columns: 1fr; }
+  .page { grid-template-columns: 1fr; }
+}
+
+/* cards animate in when their page becomes active, direction-aware */
+.slide {
+  display: flex;
+  opacity: 0;
+  transform: translateX(56px);
+  transition: opacity 0.7s cubic-bezier(.22,.61,.36,1),
+              transform 0.7s cubic-bezier(.22,.61,.36,1);
+  transition-delay: calc(var(--i, 0) * 0.09s + 0.12s);
+}
+
+.page[data-pos="before"] .slide { transform: translateX(-56px); }
+
+section.in-view .page[data-pos="active"] .slide {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.slide .card { width: 100%; }
+
+@media (prefers-reduced-motion: reduce) {
+  .slide {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
 }
 
 .card {
@@ -420,6 +513,14 @@ section.in-view .reveal-item {
   position: relative;
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
   background: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.card.more {
+  border-style: dashed;
+  background: transparent;
+  justify-content: center;
 }
 
 .card:hover {
@@ -465,6 +566,8 @@ section.in-view .reveal-item {
 }
 
 .card .link {
+  margin-top: auto;
+  align-self: flex-start;
   font-family: var(--mono);
   font-size: 0.82rem;
   font-weight: 500;

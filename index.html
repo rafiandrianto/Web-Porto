@@ -105,56 +105,121 @@
     </div>
   </section>
 
-  <!-- ============ PROJECTS ============ -->
+<!-- ============ PROJECTS ============ -->
   <section id="projects">
     <p class="eyebrow reveal-item" style="--i:0">// projects</p>
-    <h2 class="reveal-item" style="--i:1">Selected work</h2>
-    <div class="project-grid">
+    <div class="projects-head reveal-item" style="--i:1">
+      <h2>Selected work</h2>
+      <div class="pager">
+        <span class="count" id="projCount">01 / 02</span>
+        <div class="arrows">
+          <button id="projPrev" aria-label="Previous projects">←</button>
+          <button id="projNext" aria-label="Next projects">→</button>
+        </div>
+      </div>
+    </div>
 
-      <!-- Project 1: Telkomsel Forensics -->
-      <div class="card reveal-item" style="--i:2">
-        <span class="tag">data forensics &amp; analytics</span>
-        <h3>Telkomsel Revenue Leakage &amp; Data Audit</h3>
-        <p>Audited 300,000 internet transaction logs to identify systemic bugs, IMEI mismatches in premium bundling programs, and mitigate compliance risks across business units.</p>
-        <div class="pills"><span>Python</span><span>Pandas</span><span>SciPy</span><span>Seaborn</span></div>
-        <a class="link" href="https://public.tableau.com/app/profile/rafi.andrianto/viz/TelkomselDashboard/Tab1DataQuality?publish=yes" target="_blank" rel="noopener">
-          View project <span class="arrow">→</span>
-        </a>
+    <div class="scroller reveal-item" style="--i:2" id="projectScroller" tabindex="0" aria-label="Projects, scroll horizontally">
+      <!-- Page 1: Active -->
+      <div class="page" data-pos="active">
+        
+        <!-- Project 1: Telkomsel Forensics -->
+        <div class="slide" style="--i:0">
+          <article class="card">
+            <span class="tag">data forensics &amp; analytics</span>
+            <h3>Telkomsel Revenue Leakage &amp; Data Audit</h3>
+            <p>Audited 300,000 internet transaction logs to identify systemic bugs, IMEI mismatches in premium bundling programs, and mitigate compliance risks across business units.</p>
+            <div class="pills"><span>Python</span><span>Pandas</span><span>SciPy</span><span>Seaborn</span></div>
+            <a class="link" href="https://public.tableau.com/app/profile/rafi.andrianto/viz/TelkomselDashboard/Tab1DataQuality?publish=yes" target="_blank" rel="noopener">
+              View project <span class="arrow">→</span>
+            </a>
+          </article>
+        </div>
+
+        <!-- Project 2: Microplastics -->
+        <div class="slide" style="--i:1">
+          <article class="card">
+            <span class="tag">time-series &amp; predictive modeling</span>
+            <h3>Microplastic Accumulation Prediction</h3>
+            <p>Built predictive deep learning models (LSTM &amp; Random Forest) to model microplastic concentration trends over time based on environmental variables.</p>
+            <div class="pills"><span>Python</span><span>TensorFlow</span><span>Keras</span><span>Scikit-learn</span></div>
+            <a class="link" href="https://github.com/rafiandrianto/microplastic-accumulation-prediction" target="_blank" rel="noopener">
+              View project <span class="arrow">→</span>
+            </a>
+          </article>
+        </div>
+
+        <!-- Project 3: Skateboarder Computer Vision -->
+        <div class="slide" style="--i:2">
+          <article class="card">
+            <span class="tag">computer vision &amp; pose estimation</span>
+            <h3>Skateboarder Performance Analysis System</h3>
+            <p>Engineered a motion analysis tool comparing user trick videos against ideal technique to extract body keypoints and suggest biomechanical joint corrections.</p>
+            <div class="pills"><span>Python</span><span>TensorFlow</span><span>MediaPipe</span></div>
+            <a class="link" href="https://github.com/rafiandrianto/Skateboard3DConvolution" target="_blank" rel="noopener">
+              View project <span class="arrow">→</span>
+            </a>
+          </article>
+        </div>
+
+        <!-- Project 4: Sentiment Analysis -->
+        <div class="slide" style="--i:3">
+          <article class="card">
+            <span class="tag">nlp &amp; classification</span>
+            <h3>Product Review Sentiment Analysis</h3>
+            <p>Trained Logistic Regression and Deep Neural Networks on a dataset of 4,000 product reviews to automatically classify customer feedback and sentiment trends.</p>
+            <div class="pills"><span>Python</span><span>TensorFlow</span><span>Scikit-learn</span></div>
+            <a class="link" href="https://github.com/rafiandrianto/sentiment-analysis" target="_blank" rel="noopener">
+              View project <span class="arrow">→</span>
+            </a>
+          </article>
+        </div>
+
       </div>
 
-      <!-- Project 2: Microplastics -->
-      <div class="card reveal-item" style="--i:3">
-        <span class="tag">time-series &amp; predictive modeling</span>
-        <h3>Microplastic Accumulation Prediction</h3>
-        <p>Built predictive deep learning models (LSTM &amp; Random Forest) to model microplastic concentration trends over time based on environmental variables.</p>
-        <div class="pills"><span>Python</span><span>TensorFlow</span><span>Keras</span><span>Scikit-learn</span></div>
-        <a class="link" href="https://github.com/rafiandrianto/microplastic-accumulation-prediction" target="_blank" rel="noopener">
-          View project <span class="arrow">→</span>
-        </a>
-      </div>
+      <!-- Page 2 -->
+      <div class="page" data-pos="after">
 
-      <!-- Project 3: Skateboarder Computer Vision -->
-      <div class="card reveal-item" style="--i:4">
-        <span class="tag">computer vision &amp; pose estimation</span>
-        <h3>Skateboarder Performance Analysis System</h3>
-        <p>Engineered a motion analysis tool comparing user trick videos against ideal technique to extract body keypoints and suggest biomechanical joint corrections.</p>
-        <div class="pills"><span>Python</span><span>TensorFlow</span><span>MediaPipe</span></div>
-        <a class="link" href="https://github.com/rafiandrianto/Skateboard3DConvolution" target="_blank" rel="noopener">
-          View project <span class="arrow">→</span>
-        </a>
-      </div>
+        <!-- Project 5: Booking Cancelation Prediction -->
+        <div class="slide" style="--i:0">
+          <article class="card">
+            <span class="tag">machine learning &amp; revenue analytics</span>
+            <h3>Hotel Booking Cancellation Prediction</h3>
+            <p>Developed a tuned XGBoost predictive pipeline and SHAP interpretability framework to identify high-risk reservation cancellations and mitigate revenue loss.</p>
+            <div class="pills"><span>Python</span><span>XGBoost</span><span>Scikit-learn</span><span>SHAP</span><span>Streamlit</span></div>
+            <a class="link" href="https://github.com/rafiandrianto/Hotel-Booking-Cancellation-Prediction" target="_blank" rel="noopener">
+              View project <span class="arrow">→</span>
+            </a>
+          </article>
+        </div>
 
-      <!-- Project 4: Sentiment Analysis -->
-      <div class="card reveal-item" style="--i:5">
-        <span class="tag">nlp &amp; classification</span>
-        <h3>Product Review Sentiment Analysis</h3>
-        <p>Trained Logistic Regression and Deep Neural Networks on a dataset of 4,000 product reviews to automatically classify customer feedback and sentiment trends.</p>
-        <div class="pills"><span>Python</span><span>TensorFlow</span><span>Scikit-learn</span></div>
-        <a class="link" href="https://github.com/rafiandrianto/sentiment-analysis" target="_blank" rel="noopener">
-          View project <span class="arrow">→</span>
-        </a>
-      </div>
+        <!-- Project 6: Late Delivery Risk Prediction -->
+        <div class="slide" style="--i:1">
+          <article class="card">
+            <span class="tag">predictive analytics &amp; operational optimization</span>
+            <h3>Late Delivery Risk Prediction</h3>
+            <p>Developed and tuned a LightGBM to flag high-risk delivery orders, enabling Olist's internal ops team to proactively safeguard customer review scores.</p>
+            <div class="pills"><span>Python</span><span>LightGBM</span><span>Scikit-learn</span><span>SQL</span><span>Pandas</span></div>
+            <a class="link" href="https://github.com/ElmarLeonard9/temp_repo_finpro" target="_blank" rel="noopener">
+              View project <span class="arrow">→</span>
+            </a>
+          </article>
+        </div>
 
+    
+
+        <!-- More -->
+        <div class="slide" style="--i:3">
+          <article class="card more">
+            <span class="tag">// more</span>
+            <h3>See everything on GitHub</h3>
+            <p>Notebooks, experiments, and smaller analyses that didn't make the highlight reel.</p>
+            <a class="link" href="https://github.com/rafiandrianto" target="_blank" rel="noopener">
+              Browse repositories <span class="arrow">→</span>
+            </a>
+          </article>
+        </div>
+      </div>
     </div>
   </section>
 
